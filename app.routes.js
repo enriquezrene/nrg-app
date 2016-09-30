@@ -8,8 +8,7 @@ function routes($routeProvider) {
             templateUrl: 'surveys/blank/blank-survey.tpl.html',
             controller: 'BlankSurveyController',
             controllerAs: 'blank'
-        })
-        .otherwise({
+        }).otherwise({
             redirectTo: '/blank-survey'
         });
 }
