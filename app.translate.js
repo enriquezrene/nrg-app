@@ -2,57 +2,94 @@ angular
     .module('app.translate', ['pascalprecht.translate'])
     .config(['$translateProvider', function ($translateProvider) {
         $translateProvider.translations('en', {
-            'menu.download.form': 'Download Form',
-            'menu.fill.form': 'Fill Form',
-            'basic.info.title': 'Basic Information',
-            'trailers.info.title': 'Trailers',
-            'btn.print.form': 'Print Form',
-            'label.name': 'Name',
-            'label.last.name': 'Last Name',
-            'label.email': 'Email',
-            'label.date': 'Date',
-            'label.city': 'City',
-            'label.theater': 'Theater',
-            'label.showtime': 'Showtime Hour',
-            'label.order': 'Order',
-            'label.duration': 'Duration',
-            'label.seconds': 'Seconds'
+            'Menu.download.form': 'Download Form',
+            'Menu.fill.form': 'Fill Form',
+            'Basic.info.title': 'Basic Information',
+            'Trailers.info.title': 'Trailers',
+            'Btn.print.form': 'Print Form',
+            'Label.name': 'Name',
+            'Label.last.name': 'Last Name',
+            'Label.email': 'Email',
+            'Label.date': 'Date',
+            'Label.city': 'City',
+            'Label.theater': 'Theater',
+            'Label.showtime': 'Showtime Hour',
+            'Label.order': 'Order',
+            'Label.duration': 'Duration',
+            'Label.seconds': 'Seconds'
         });
 
         $translateProvider.translations('es', {
-            'menu.download.form': 'Descargar Formulario',
-            'menu.fill.form': 'Llenar Formulario',
-            'basic.info.title': 'Informacion Basica',
-            'trailers.info.title': 'Comerciales',
-            'btn.print.form': 'Imprimir Formulario',
-            'label.name': 'Nombre',
-            'label.last.name': 'Apellido',
-            'label.email': 'Email',
-            'label.date': 'Fecha',
-            'label.city': 'Ciudad',
-            'label.theater': 'Teatro',
-            'label.showtime': 'Hora de la Funcion',
-            'label.order': 'Orden',
-            'label.duration': 'Duracion',
-            'label.seconds': 'Segundos'
+            'Menu.download.form': 'Descargar Formulario',
+            'Menu.fill.form': 'Llenar Formulario',
+            'Basic.info.title': 'Informacion Basica',
+            'Trailers.info.title': 'Comerciales',
+            'Btn.print.form': 'Imprimir Formulario',
+            'Label.name': 'Nombre',
+            'Label.last.name': 'Apellido',
+            'Label.email': 'Email',
+            'Label.date': 'Fecha',
+            'Label.city': 'Ciudad',
+            'Label.theater': 'Teatro',
+            'Label.showtime': 'Hora de la Funcion',
+            'Label.order': 'Orden',
+            'Label.duration': 'Duracion',
+            'Label.seconds': 'Segundos'
         });
 
         $translateProvider.translations('de', {
-            'menu.download.form': 'Formular herunterladen',
-            'menu.fill.form': 'Formular ausfüllen',
-            'basic.info.title': 'Grundlagen ',
-            'trailers.info.title': 'Anhänger',
-            'btn.print.form': 'Print Form',
-            'label.name': 'Name',
-            'label.last.name': 'Nachname',
-            'label.email': 'E-Mail',
-            'label.date': 'Datum',
-            'label.city': 'City',
-            'label.theater': 'Theater',
-            'label.showtime': 'Showtime -Stunde',
-            'label.order': 'Order',
-            'label.duration': 'Dauer',
-            'label.seconds': 'Sekunden'
+            'Menu.download.form': 'Formular herunterladen',
+            'Menu.fill.form': 'Formular ausfüllen',
+            'Basic.info.title': 'Grundlagen ',
+            'Trailers.info.title': 'Anhänger',
+            'Btn.print.form': 'Print Form',
+            'Label.name': 'Name',
+            'Label.last.name': 'Nachname',
+            'Label.email': 'E-Mail',
+            'Label.date': 'Datum',
+            'Label.city': 'City',
+            'Label.theater': 'Theater',
+            'Label.showtime': 'Showtime -Stunde',
+            'Label.order': 'Order',
+            'Label.duration': 'Dauer',
+            'Label.seconds': 'Sekunden'
+        });
+
+
+        $translateProvider.translations('fr', {
+            'Menu.download.form': 'Télécharger Form',
+            'Menu.fill.form': 'Remplissez le formulaire',
+            'Basic.info.title': 'Informations de base',
+            'Trailers.info.title': 'Remorques',
+            'Btn.print.form': 'Print Form',
+            'Label.name': 'Nom',
+            'Label.last.name': 'Nom',
+            'Label.email': 'Email',
+            'Label.date': 'Date',
+            'Label.city': 'City',
+            'Label.theater': 'Theater',
+            'Label.showtime': 'Showtime Hour',
+            'Label.order': 'Commander',
+            'Label.duration': 'Durée',
+            'Label.seconds': 'Secondes'
+        });
+
+        $translateProvider.translations('it', {
+            'Menu.download.form': 'Scarica il modulo',
+            'Menu.fill.form': 'Fill Form',
+            'Basic.info.title': 'Informazioni di base',
+            'Trailers.info.title': 'Trailers',
+            'Btn.print.form': 'Modulo di stampa',
+            'Label.name': 'Nome',
+            'Label.last.name': 'Cognome',
+            'Label.email': 'e-mail',
+            'Label.date': 'Data',
+            'Label.city': 'City',
+            'Label.theater': 'Teatro',
+            'Label.showtime': 'Showtime Hour',
+            'Label.order': 'Ordine',
+            'Label.duration': 'Durata',
+            'Label.seconds': 'secondi'
         });
 
         $translateProvider.preferredLanguage('en');
