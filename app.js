@@ -1,1 +1,1 @@
-angular.module('app', ['app.routes', 'app.core']);
+angular.module('app', ['app.routes', 'app.core', 'app.translate']);

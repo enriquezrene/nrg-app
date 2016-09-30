@@ -1,65 +1,65 @@
 <div class="container">
     <div class="page-header">
         <button type="button" class="btn btn-default" onclick="window.print()">
-            <span class="glyphicon glyphicon-print"></span> Print Form
+            <span class="glyphicon glyphicon-print"></span> {{ 'btn.print.form' | translate }}
         </button>
     </div>
     <p>
     <div class="panel panel-default">
-        <div class="panel-heading">Basic Information</div>
+        <div class="panel-heading">{{ 'basic.info.title' | translate }}</div>
         <div class="panel-body">
             <form>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="Name">
+                    <input type="text" class="form-control" id="name" placeholder="{{ 'label.name' | translate }}">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+                    <input type="text" class="form-control" id="last_name" placeholder="{{ 'label.last.name' | translate }}">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Email Address">
+                    <input type="email" class="form-control" id="email" placeholder="{{ 'label.email' | translate }}">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="date" placeholder="Date">
+                    <input type="text" class="form-control" id="date" placeholder="{{ 'label.date' | translate }}">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="city" placeholder="City Name">
+                    <input type="text" class="form-control" id="city" placeholder="{{ 'label.city' | translate }}">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="theater" placeholder="Theater">
+                    <input type="text" class="form-control" id="theater" placeholder="{{ 'label.theater' | translate }}">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="showtime" placeholder="Showtime Hour">
+                    <input type="text" class="form-control" id="showtime" placeholder="{{ 'label.showtime' | translate }}">
                 </div>
             </form>
         </div>
     </div>
     <div class="panel panel-default">
-        <div class="panel-heading">Trailers</div>
+        <div class="panel-heading">{{ 'trailers.info.title' | translate }}</div>
         <div class="panel-body">
 
             <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
-                    <th>Order</th>
-                    <th>Name</th>
-                    <th>Duration</th>
+                    <th>{{ 'label.order' | translate }}</th>
+                    <th>{{ 'label.name' | translate }}</th>
+                    <th>{{ 'label.duration' | translate }}</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>_____ seconds</td>
+                    <td>_____ {{ 'label.seconds' | translate }}</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>_____ seconds</td>
+                    <td>_____ {{ 'label.seconds' | translate }}</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>_____ seconds</td>
+                    <td>_____ {{ 'label.seconds' | translate }}</td>
                 </tr>
                 </tbody>
             </table>
