@@ -16,7 +16,9 @@ angular
             'Label.showtime': 'Showtime Hour',
             'Label.order': 'Order',
             'Label.duration': 'Duration',
-            'Label.seconds': 'Seconds'
+            'Label.seconds': 'seconds',
+            'Btn.add.trailer': 'Add trailer',
+            'Label.no.records': 'No records added'
         });
 
         $translateProvider.translations('es', {
@@ -34,7 +36,8 @@ angular
             'Label.showtime': 'Hora de la Funcion',
             'Label.order': 'Orden',
             'Label.duration': 'Duracion',
-            'Label.seconds': 'Segundos'
+            'Label.seconds': 'segundos',
+            'Label.no.records': 'No se han agregado registros'
         });
 
         $translateProvider.translations('de', {
@@ -52,7 +55,8 @@ angular
             'Label.showtime': 'Showtime -Stunde',
             'Label.order': 'Order',
             'Label.duration': 'Dauer',
-            'Label.seconds': 'Sekunden'
+            'Label.seconds': 'sekunden',
+            'Label.no.records': 'Keine Datensätze hinzugefügt'
         });
 
 
@@ -71,7 +75,8 @@ angular
             'Label.showtime': 'Showtime Hour',
             'Label.order': 'Commander',
             'Label.duration': 'Durée',
-            'Label.seconds': 'Secondes'
+            'Label.seconds': 'secondes',
+            'Label.no.records': 'No records ajoutés'
         });
 
         $translateProvider.translations('it', {
@@ -89,7 +94,8 @@ angular
             'Label.showtime': 'Showtime Hour',
             'Label.order': 'Ordine',
             'Label.duration': 'Durata',
-            'Label.seconds': 'secondi'
+            'Label.seconds': 'secondi',
+            'Label.no.records': 'Non ci sono record aggiunti'
         });
 
         $translateProvider.preferredLanguage('en');
