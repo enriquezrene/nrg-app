@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="page-header">
+
+    </div>
+    <p>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{ 'Basic.info.title' | translate }}</div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="{{ 'Label.name' | translate }}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="last_name"
+                       placeholder="{{ 'Label.last.name' | translate }}">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="{{ 'Label.email' | translate }}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="date" placeholder="{{ 'Label.date' | translate }}">
+            </div>
+            <div class="form-group">
+                <input type="text" ng-autocomplete ng-model="autocomplete" options="fill.options" details="details" class="form-control" id="city" placeholder="{{ 'Label.city' | translate }}"/>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="theater" placeholder="{{ 'Label.theater' | translate }}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="showtime" placeholder="{{ 'Label.showtime' | translate }}">
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{ 'Trailers.info.title' | translate }}</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="fill.trailer_order"
+                       placeholder="{{ 'Label.order' | translate }}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="fill.trailer_name" placeholder="{{ 'Label.name' | translate }}"/>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="fill.trailer_duration"
+                       placeholder="{{ 'Label.duration' | translate }} ({{ 'Label.seconds' | translate }})"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" ng-click="fill.add_trailer()">{{ 'Btn.add.trailer' | translate }}</button>
+            </div>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>{{ 'Label.order' | translate }}</th>
+                    <th>{{ 'Label.name' | translate }}</th>
+                    <th>{{ 'Label.duration' | translate }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-show="fill.trailers_entered.length==0">
+                    <td colspan="3">
+                        {{ 'Label.no.records' | translate }}
+                    </td>
+                </tr>
+                <tr ng-repeat="trail in fill.trailers_entered">
+                    <th>{{ trail.trailer_order }}</th>
+                    <th>{{ trail.trailer_name }}</th>
+                    <th>{{ trail.trailer_duration }}</th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </p>
+</div>
+
