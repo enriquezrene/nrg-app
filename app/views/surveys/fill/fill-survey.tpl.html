@@ -1,93 +1,128 @@
 <div class="container">
   <div class="page-header">
     <h4>
-      {{ 'Menu.fill.form' | translate }}
+      {{ 'Basic.info.title' | translate }}
     </h4>
   </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">{{ 'Basic.info.title' | translate }}</div>
-
-    <div class="panel-body">
-      <div class="form-group">
-        <input type="text" class="form-control" id="name" placeholder="{{ 'Label.name' | translate }}">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="last_name"
-               placeholder="{{ 'Label.last.name' | translate }}">
-      </div>
-      <div class="form-group">
-        <input type="email" class="form-control" id="email" placeholder="{{ 'Label.email' | translate }}">
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <p class="input-group">
-            <input type="text" class="form-control" uib-datepicker-popup="dd/MM/yyyy" ng-click="fill.show_calendar()"
-                   ng-model="fill.date" is-open="fill.calendar_open" datepicker-options="fill.date_picker_options"
-                   ng-required="true" close-text="Close" alt-input-formats="fill.date_picker_alt_input_formats"
-                   placeholder="{{ 'Label.date' | translate }}"/>
-            <span class="input-group-btn">
+  <div class="row">
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" id="name" placeholder="{{ 'Label.name' | translate }}">
+    </div>
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" id="last_name"
+             placeholder="{{ 'Label.last.name' | translate }}">
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" ng-autocomplete ng-model="autocomplete" options="fill.options" details="details"
+           class="form-control" id="city" placeholder="{{ 'Label.city' | translate }}"/>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="theater" placeholder="{{ 'Label.theater' | translate }}">
+  </div>
+  <div class="row">
+    <div class="col-md-8 form-group">
+      <input type="text" class="form-control" id="movie_name" placeholder="{{ 'Label.movie.name' | translate }}">
+    </div>
+    <div class="col-md-2 form-group">
+      <label class="radio-inline"><input type="radio" name="movie_format">{{ 'Label.movie.format.2D' | translate
+        }}</label>
+    </div>
+    <div class="col-md-2 form-group">
+      <label class="radio-inline"><input type="radio" name="movie_format">{{ 'Label.movie.format.3D' | translate
+        }}</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 form-group">
+      <input type="screen" class="form-control" id="screen" placeholder="{{ 'Label.screen' | translate }}">
+    </div>
+    <div class="col-md-4">
+      <p class="input-group">
+        <input type="text" class="form-control" uib-datepicker-popup="dd/MM/yyyy" ng-click="fill.show_calendar()"
+               ng-model="fill.date" is-open="fill.calendar_open" datepicker-options="fill.date_picker_options"
+               ng-required="true" close-text="Close" alt-input-formats="fill.date_picker_alt_input_formats"
+               placeholder="{{ 'Label.date' | translate }}"/>
+        <span class="input-group-btn">
                                 <button type="button" class="btn btn-default" ng-click="fill.show_calendar()">
                                   <i class="glyphicon glyphicon-calendar"></i>
                                 </button>
               </span>
-          </p>
-        </div>
-      </div>
-      <div class="form-group">
-        <input type="text" ng-autocomplete ng-model="autocomplete" options="fill.options" details="details"
-               class="form-control" id="city" placeholder="{{ 'Label.city' | translate }}"/>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="theater" placeholder="{{ 'Label.theater' | translate }}">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="showtime" placeholder="{{ 'Label.showtime' | translate }}">
-      </div>
+      </p>
+    </div>
+    <div class="col-md-4 form-group">
+      <input type="text" class="form-control" id="showtime" placeholder="{{ 'Label.showtime' | translate }}">
     </div>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">{{ 'Trailers.info.title' | translate }}</div>
-    <div class="panel-body">
-      <div class="form-group">
-        <input type="text" class="form-control" ng-model="fill.trailer_order"
-               placeholder="{{ 'Label.order' | translate }}">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" ng-model="fill.trailer_name"
-               placeholder="{{ 'Label.name' | translate }}"/>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" ng-model="fill.trailer_duration"
-               placeholder="{{ 'Label.duration' | translate }} ({{ 'Label.seconds' | translate }})"/>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" ng-click="fill.add_trailer()">{{ 'Btn.add.trailer' | translate }}</button>
-      </div>
 
-      <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-          <th>{{ 'Label.order' | translate }}</th>
-          <th>{{ 'Label.name' | translate }}</th>
-          <th>{{ 'Label.duration' | translate }}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-show="fill.trailers_entered.length==0">
-          <td colspan="3">
-            {{ 'Label.no.records' | translate }}
-          </td>
-        </tr>
-        <tr ng-repeat="trail in fill.trailers_entered">
-          <th>{{ trail.trailer_order }}</th>
-          <th>{{ trail.trailer_name }}</th>
-          <th>{{ trail.trailer_duration }}</th>
-        </tr>
-        </tbody>
-      </table>
+  <div class="form-group">
+    <input type="email" class="form-control" id="email" placeholder="{{ 'Label.email' | translate }}">
+  </div>
+
+  <div class="page-header">
+    <h4>
+      {{ 'Trailers.info.title' | translate }}
+    </h4>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-4">
+      <input type="text" class="form-control" ng-model="fill.trailer_order"
+             placeholder="{{ 'Label.order' | translate }}">
+    </div>
+    <div class="form-group col-md-4">
+      <input type="text" class="form-control" ng-model="fill.trailer_duration"
+             placeholder="{{ 'Label.duration' | translate }} ({{ 'Label.seconds' | translate }})"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input type="text" class="form-control" ng-model="fill.trailer_clasification"
+             placeholder="{{ 'Label.duration.classification' | translate }}"/>
     </div>
   </div>
-  </p>
+  <div class="form-group">
+    <input type="text" class="form-control" ng-model="fill.trailer_name"
+           placeholder="{{ 'Label.trailer.name' | translate }}"/>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" ng-model="fill.trailer_distributor"
+           placeholder="{{ 'Label.trailer.distributor' | translate }}"/>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary" ng-click="fill.add_trailer()">{{ 'Btn.add.trailer' | translate }}</button>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>{{ 'Label.order' | translate }}</th>
+      <th>{{ 'Label.trailer.name' | translate }}</th>
+      <th>{{ 'Label.trailer.distributor' | translate }}</th>
+      <th>{{ 'Label.duration' | translate }}</th>
+      <th style="text-align: center">{{ 'Label.actions' | translate }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-show="fill.trailers_entered.length==0">
+      <td colspan="5">
+        {{ 'Label.no.records' | translate }}
+      </td>
+    </tr>
+    <tr ng-repeat="trail in fill.trailers_entered">
+      <td>{{ trail.trailer_order }}</td>
+      <td>{{ trail.trailer_name }}</td>
+      <td>{{ trail.trailer_distributor }}</td>
+      <td>{{ trail.trailer_duration }}</td>
+      <td style="text-align: center">
+        <a ng-click="fill.edit_trailer(trail)"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a ng-click="fill.remove_trailer(trail)"><span class="glyphicon glyphicon-remove"></span></a>
+        <a href="#"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+        <a href="#"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
 </div>
+
 
