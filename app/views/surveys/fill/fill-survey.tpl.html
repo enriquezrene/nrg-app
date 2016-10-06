@@ -65,32 +65,39 @@
     </h4>
   </div>
 
-  <div class="row">
-    <div class="form-group col-md-4">
-      <input type="text" class="form-control" ng-model="fill.trailer_order"
-             placeholder="{{ 'Label.order' | translate }}">
-    </div>
-    <div class="form-group col-md-4">
-      <input type="text" class="form-control" ng-model="fill.trailer_duration"
-             placeholder="{{ 'Label.duration' | translate }} ({{ 'Label.seconds' | translate }})"/>
-    </div>
-    <div class="form-group col-md-4">
-      <input type="text" class="form-control" ng-model="fill.trailer_clasification"
-             placeholder="{{ 'Label.duration.classification' | translate }}"/>
-    </div>
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" ng-model="fill.trailer_name"
-           placeholder="{{ 'Label.trailer.name' | translate }}"/>
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" ng-model="fill.trailer_distributor"
-           placeholder="{{ 'Label.trailer.distributor' | translate }}"/>
-  </div>
+  <form name="trailers_form" novalidate>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <input type="text" class="form-control" id="trailer_order" name="trailer_order" required ng-model="fill.trailer.trailer_order"
+               placeholder="{{ 'Label.order' | translate }}" check-order>
 
-  <div class="form-group">
-    <button class="btn btn-primary" ng-click="fill.add_trailer()">{{ 'Btn.add.trailer' | translate }}</button>
-  </div>
+        <div ng-messages="trailers_form.trailer_order.$error" role="alert">
+          <div ng-message="checkOrder">Please enter a aa value for this field.</div>
+        </div>
+
+      </div>
+      <div class="form-group col-md-4">
+        <input type="text" class="form-control" ng-model="fill.trailer.trailer_duration"
+               placeholder="{{ 'Label.duration' | translate }} ({{ 'Label.seconds' | translate }})"/>
+      </div>
+      <div class="form-group col-md-4">
+        <input type="text" class="form-control" ng-model="fill.trailer.trailer_clasification"
+               placeholder="{{ 'Label.duration.classification' | translate }}"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="fill.trailer.trailer_name"
+             placeholder="{{ 'Label.trailer.name' | translate }}"/>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="fill.trailer.trailer_distributor"
+             placeholder="{{ 'Label.trailer.distributor' | translate }}"/>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" ng-click="fill.add_trailer()">{{ 'Btn.add.trailer' | translate }}</button>
+    </div>
+  </form>
 
   <table class="table table-striped">
     <thead>
@@ -108,16 +115,19 @@
         {{ 'Label.no.records' | translate }}
       </td>
     </tr>
-    <tr ng-repeat="trail in fill.trailers_entered">
-      <td>{{ trail.trailer_order }}</td>
-      <td>{{ trail.trailer_name }}</td>
-      <td>{{ trail.trailer_distributor }}</td>
-      <td>{{ trail.trailer_duration }}</td>
+    <tr ng-repeat="trailer in fill.trailers_entered">
+      <td>
+        <output ng-mod></output>
+        {{ trailer.trailer_order }}
+      </td>
+      <td>{{ trailer.trailer_name }}</td>
+      <td>{{ trailer.trailer_distributor }}</td>
+      <td>{{ trailer.trailer_duration }}</td>
       <td style="text-align: center">
-        <a ng-click="fill.edit_trailer(trail)"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a ng-click="fill.remove_trailer(trail)"><span class="glyphicon glyphicon-remove"></span></a>
-        <a href="#"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
-        <a href="#"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
+        <a ng-click="fill.edit_trailer(trailer)"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a ng-click="fill.remove_trailer(trailer)"><span class="glyphicon glyphicon-remove"></span></a>
+        <a ng-click="fill.trailer_up(trailer)"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+        <a ng-click="fill.trailer_down(trailer)"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
       </td>
     </tr>
     </tbody>

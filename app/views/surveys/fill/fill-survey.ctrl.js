@@ -4,7 +4,9 @@ angular.module('app.core').controller('FillSurveyController', function () {
 
   vm.calendar_open = false;
 
-  vm.current_trailer = undefined;
+  vm.trailer = {};
+
+  var current_trailer_index = -1;
 
   vm.date = undefined;
   vm.date_picker_options = {
@@ -36,34 +38,63 @@ angular.module('app.core').controller('FillSurveyController', function () {
     }
   ];
 
+  vm.trailer_down = function (trailer) {
+    var current_trailer_order = trailer.trailer_order;
+    var current_trailer_index = vm.trailers_entered.indexOf(trailer);
+    if (current_trailer_index == vm.trailers_entered.length-1) {
+      return;
+    }
+    var after_trailer = vm.trailers_entered[current_trailer_index + 1];
+    trailer.trailer_order = after_trailer.trailer_order;
+    after_trailer.trailer_order = current_trailer_order;
+    order_trailers();
+  };
+
+  vm.trailer_up = function (trailer) {
+    var current_trailer_order = trailer.trailer_order;
+    var current_trailer_index = vm.trailers_entered.indexOf(trailer);
+    if (current_trailer_index == 0) {
+      return;
+    }
+    var before_trailer = vm.trailers_entered[current_trailer_index - 1];
+    trailer.trailer_order = before_trailer.trailer_order;
+    before_trailer.trailer_order = current_trailer_order;
+    order_trailers();
+  };
+
   vm.add_trailer = function () {
-    vm.current_trailer = undefined;
-    vm.trailers_entered.push({
-      'trailer_order': vm.trailer_order,
-      'trailer_name': vm.trailer_name,
-      'trailer_duration': vm.trailer_duration,
-      'trailer_distributor': vm.trailer_distributor
-    });
-    vm.trailer_order = '';
-    vm.trailer_name = '';
-    vm.trailer_duration = '';
-    vm.trailer_duration_classification = '';
-    vm.trailer_distributor = '';
+    if (current_trailer_index >= 0) {
+      vm.trailers_entered.splice(current_trailer_index, 1, vm.trailer);
+      current_trailer_index = -1;
+    } else {
+      vm.trailers_entered.push(vm.trailer);
+    }
+    order_trailers();
+    vm.trailer = {};
   };
 
   vm.edit_trailer = function (trailer) {
-    vm.current_trailer = trailer;
-    vm.trailer_order = trailer.trailer_order;
-    vm.trailer_name = trailer.trailer_name;
-    vm.trailer_duration = trailer.trailer_duration;
-    vm.trailer_duration_classification = trailer.trailer_duration_classification;
-    vm.trailer_distributor = trailer.trailer_distributor;
+    current_trailer_index = vm.trailers_entered.indexOf(trailer);
+    vm.trailer = angular.copy(trailer);
   };
 
   vm.remove_trailer = function (trailer) {
     var index_for_remove = vm.trailers_entered.indexOf(trailer);
-    if(index_for_remove!==-1){
+    if (index_for_remove !== -1) {
       vm.trailers_entered.splice(index_for_remove, 1);
     }
+  };
+
+  function order_trailers(){
+    vm.trailers_entered.sort(function (a, b) {
+      if(a.trailer_order < b.trailer_order){
+        return -1;
+      } else if(a.trailer_order > b.trailer_order){
+        return 1;
+      } else {
+        return 0;
+      }
+    })
   }
+
 });
