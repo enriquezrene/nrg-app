@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
   <script type="text/javascript"
-          src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=AIzaSyCMg61YckNGdx5JS0lx1eBTcynE2w82n9o"></script>
+          src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=AIzaSyCMg61YckNGdx5JS0lx1eBTcynE2w82n9o&language=en"></script>
 </head>
 <body ng-app="app">
 <!--[if lte IE 8]>
@@ -50,6 +50,7 @@
     <ul class="nav navbar-nav" bs-active-link>
       <li><a href="#/blank-survey">{{ 'Menu.download.form' | translate }}</a></li>
       <li><a href="#/fill-survey">{{ 'Menu.fill.form' | translate }}</a></li>
+      <li><a href="#/manage/markets">{{ 'Menu.manage.markets' | translate }}</a></li>
     </ul>
   </div>
 </nav>
@@ -82,9 +83,11 @@
 <script src="views/surveys/blank/blank-survey.ctrl.js"></script>
 <script src="views/surveys/fill/fill-survey.ctrl.js"></script>
 <script src="i18n/i18n.ctrl.js"></script>
+<script src="views/manage/markets/manage-markets.ctrl.js"></script>
 <script src="components/bsActiveLink/bs-active-link.js"></script>
 <script src="components/ngAutocomplete/ng-autocomplete.js"></script>
 <script src="services/surveys.fct.js"></script>
+<script src="services/markets.fct.js"></script>
 <!-- endbuild -->
 </body>
 </html>
