@@ -38,8 +38,8 @@
     <tr ng-repeat="market in manageMarkets.markets">
       <td>{{ market.name }}</td>
       <td style="text-align: center">
-        <a><span class="glyphicon glyphicon-pencil"></span></a>
-        <a><span class="glyphicon glyphicon-remove"></span></a>
+        <a ng-click="manageMarkets.edit(market)"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a ng-click="manageMarkets.remove(market)"><span class="glyphicon glyphicon-remove"></span></a>
       </td>
     </tr>
     </tbody>

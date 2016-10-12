@@ -15,4 +15,12 @@ angular.module('app.core').controller('ManageMarketsController', function (Marke
     MarketsService.save(vm.market);
   };
 
+  vm.edit = function (market) {
+    console.log(market);
+  };
+
+  vm.remove = function (market) {
+    console.log(market);
+  };
+
 });
