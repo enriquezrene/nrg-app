@@ -16,18 +16,6 @@
   <!-- endbuild -->
   <script type="text/javascript"
           src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=AIzaSyCMg61YckNGdx5JS0lx1eBTcynE2w82n9o&language=en"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyB_z39DJzoGohAxnNjfzo-JS483sDIyd5Y",
-      authDomain: "fir-9c801.firebaseapp.com",
-      databaseURL: "https://fir-9c801.firebaseio.com",
-      storageBucket: "fir-9c801.appspot.com",
-      messagingSenderId: "545225286496"
-    };
-    firebase.initializeApp(config);
-  </script>
 </head>
 <body ng-app="app">
 <!--[if lte IE 8]>
@@ -69,19 +57,6 @@
 
 <main class="main-container container" ng-view></main>
 
-<!--<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>-->
-<!--<script>-->
-<!--// Initialize Firebase-->
-<!--var config = {-->
-<!--apiKey: "AIzaSyB_z39DJzoGohAxnNjfzo-JS483sDIyd5Y",-->
-<!--authDomain: "fir-9c801.firebaseapp.com",-->
-<!--databaseURL: "https://fir-9c801.firebaseio.com",-->
-<!--storageBucket: "",-->
-<!--messagingSenderId: "545225286496"-->
-<!--};-->
-<!--firebase.initializeApp(config);-->
-<!--</script>-->
-
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -115,6 +90,7 @@
 <script src="components/ngAutocomplete/ng-autocomplete.js"></script>
 <script src="services/surveys.fct.js"></script>
 <script src="services/markets.fct.js"></script>
+<script src="services/firebase.fct.js"></script>
 <script src="directives/check-order.drct.js"></script>
 <!-- endbuild -->
 </body>
