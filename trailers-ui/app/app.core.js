@@ -1,1 +1,1 @@
-angular.module('app.core', ['app.services', 'ngAutocomplete', 'ui.bootstrap', 'ngResource']);
+angular.module('app.core', ['app.services', 'ngAutocomplete', 'ui.bootstrap', 'ngResource', 'firebase']);
