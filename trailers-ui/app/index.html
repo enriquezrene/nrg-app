@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <title>Surveys</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=AIzaSyCMg61YckNGdx5JS0lx1eBTcynE2w82n9o&language=en"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB_z39DJzoGohAxnNjfzo-JS483sDIyd5Y",
+      authDomain: "fir-9c801.firebaseapp.com",
+      databaseURL: "https://fir-9c801.firebaseio.com",
+      storageBucket: "fir-9c801.appspot.com",
+      messagingSenderId: "545225286496"
+    };
+    firebase.initializeApp(config);
+  </script>
+</head>
+<body ng-app="app">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<nav style="text-align: right">
+  <div ng-controller="i18nCtrl">
+    <div class="btn-group">
+      <a class="btn dropdown-toggle" data-toggle="dropdown">
+        Choose your language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a ng-click="changeLanguage('es')"><img src="i18n/flag-spain.png"/>&nbsp;Spanish</a></li>
+        <li><a ng-click="changeLanguage('en')"><img src="i18n/flag-uk.png"/>&nbsp;English</a></li>
+        <li><a ng-click="changeLanguage('de')"><img src="i18n/flag-germany.png"/>&nbsp;German</a></li>
+        <li><a ng-click="changeLanguage('fr')"><img src="i18n/flag-france.png"/>&nbsp;French</a></li>
+        <li><a ng-click="changeLanguage('it')"><img src="i18n/flag-italy.png"/>&nbsp;Italian</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Trailers Audit</a>
+    </div>
+    <ul class="nav navbar-nav" bs-active-link>
+      <li><a href="#/blank-survey">{{ 'Menu.download.form' | translate }}</a></li>
+      <li><a href="#/fill-survey">{{ 'Menu.fill.form' | translate }}</a></li>
+      <li><a href="#/manage/markets">{{ 'Menu.manage.markets' | translate }}</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="main-container container" ng-view></main>
+
+<!--<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>-->
+<!--<script>-->
+<!--// Initialize Firebase-->
+<!--var config = {-->
+<!--apiKey: "AIzaSyB_z39DJzoGohAxnNjfzo-JS483sDIyd5Y",-->
+<!--authDomain: "fir-9c801.firebaseapp.com",-->
+<!--databaseURL: "https://fir-9c801.firebaseio.com",-->
+<!--storageBucket: "",-->
+<!--messagingSenderId: "545225286496"-->
+<!--};-->
+<!--firebase.initializeApp(config);-->
+<!--</script>-->
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="app.js"></script>
+<script src="scripts/app.angular.default.js"></script>
+<script src="app.core.js"></script>
+<script src="app.routes.js"></script>
+<script src="app.services.js"></script>
+<script src="app.translate.js"></script>
+<script src="views/surveys/blank/blank-survey.ctrl.js"></script>
+<script src="views/surveys/fill/fill-survey.ctrl.js"></script>
+<script src="i18n/i18n.ctrl.js"></script>
+<script src="views/manage/markets/manage-markets.ctrl.js"></script>
+<script src="components/bsActiveLink/bs-active-link.js"></script>
+<script src="components/ngAutocomplete/ng-autocomplete.js"></script>
+<script src="services/surveys.fct.js"></script>
+<script src="services/markets.fct.js"></script>
+<script src="directives/check-order.drct.js"></script>
+<!-- endbuild -->
+</body>
+</html>
