@@ -19,4 +19,4 @@ Data model can be found [here] (https://drive.google.com/a/ioet.com/file/d/0BwUu
 
 Be sure to get connected draw.io in you drive account so that to check it out
 
-If you want to take a walk on the app, please visit this [link] (https://nrgmr.github.io/trailers/trailers-ui/dist/#/manage/markets)
+If you want to take a walk on the app, please visit this [link] (https://nrgmr.github.io/trailers/trailers-ui/dist/#)
