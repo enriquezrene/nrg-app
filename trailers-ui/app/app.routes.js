@@ -9,6 +9,11 @@ function routes($routeProvider) {
       controller: 'ManageMarketsController',
       controllerAs: 'manageMarkets'
     })
+    .when('/nrg/projects/manage', {
+      templateUrl: 'views/projects/nrg/nrg-projects.tpl.html',
+      controller: 'NrgProjectsController',
+      controllerAs: 'nrgProjectsController'
+    })
     .when('/blank-survey', {
       templateUrl: 'views/surveys/blank/blank-survey.tpl.html',
       controller: 'BlankSurveyController',

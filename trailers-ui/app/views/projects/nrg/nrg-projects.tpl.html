@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="page-header">
+    <h4>
+      Projects
+    </h4>
+  </div>
+
+
+  <form>
+    <div class="form-group">
+      <label for="feature_film">Feature Film:</label>
+      <select id="feature_film" class="form-control"
+              ng-options="film.default_title for (id, film) in nrgProjectsController.feature_films"
+              ng-model="nrgProjectsController.selected_film">
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <button class="btn btn-primary" ng-click="nrgProjectsController.create_project()">{{ 'Btn.ok' | translate }}
+      </button>
+    </div>
+
+    <pre>
+      {{nrgProjectsController.feature_films | json}}
+    </pre>
+  </form>
+
+
+</div>
+

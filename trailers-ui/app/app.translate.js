@@ -32,7 +32,9 @@ angular
       'Label.trailer.distributor': 'Distributor',
       'Label.duration': 'Length Duration',
       'Label.actions': 'Actions',
-      'Label.duration.classification': 'Length Classification'
+      'Label.duration.classification': 'Length Classification',
+      'Menu.manage.nrg.projects' : 'Projects',
+      'Btn.ok' : 'OK'
     });
 
     $translateProvider.translations('es', {
