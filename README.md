@@ -15,6 +15,12 @@ In order to get running the project locally, follow these steps:
    grunt serve
 ```
 
+If you're interested in run test inside tempura-ui type:
+
+```
+    karma start karma.conf.js
+```
+
 Data model can be found [here] (https://drive.google.com/a/ioet.com/file/d/0BwUuvDuDx8fiX2ZGbVc5VlFxWU0/view?usp=sharing)
 
 Be sure to get connected draw.io in you drive account so that to check it out
