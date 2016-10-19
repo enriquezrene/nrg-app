@@ -1,16 +1,20 @@
-angular.module('app.core').controller('ManageMarketsController', function (MarketsService, FirebaseService, $firebaseArray) {
+angular.module('app.core').controller('ManageMarketsController', function (MarketsService, FirebaseService, $firebaseArray, $http) {
 
   var vm = this;
   var ref = null;
+  vm.market = {};
 
   (function initController() {
     _activate()
   })();
 
   function _activate() {
-    vm.options = {
-      types: '(cities)'
-    };
+
+    $http.get('_iso_3166_alpha2.json').success(function (data) {
+      console.log(data);
+      vm.country_codes = data;
+    });
+
     vm.market = {};
     ref = FirebaseService.ref("markets");
     vm.markets = $firebaseArray(ref);
@@ -18,10 +22,10 @@ angular.module('app.core').controller('ManageMarketsController', function (Marke
 
   vm.save_market = function () {
     var id = vm.market['$id'];
-    if(id == undefined || id == null){
+    if (id == undefined || id == null) {
       vm.markets.$add({
         name: vm.market.name,
-        location: vm.market.location
+        country: vm.market.country
       });
     } else {
       var currentMarket = vm.markets.$getRecord(id);
