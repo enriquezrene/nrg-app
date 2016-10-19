@@ -10,11 +10,11 @@ function dataService($http, $log) {
   };
 
   var config = {
-    apiKey: "AIzaSyB_z39DJzoGohAxnNjfzo-JS483sDIyd5Y",
-    authDomain: "fir-9c801.firebaseapp.com",
-    databaseURL: "https://fir-9c801.firebaseio.com",
-    storageBucket: "fir-9c801.appspot.com",
-    messagingSenderId: "545225286496"
+    apiKey: "AIzaSyAxOC6GVOZiLcXho0vjZ5leNggVJ06bVFA",
+    authDomain: "nrg-app-56be9.firebaseapp.com",
+    databaseURL: "https://nrg-app-56be9.firebaseio.com",
+    storageBucket: "nrg-app-56be9.appspot.com",
+    messagingSenderId: "761176379936"
   };
   firebase.initializeApp(config);
 
