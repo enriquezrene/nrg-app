@@ -1,48 +1,29 @@
 angular
   .module('app.services')
-  .factory('MarketsService', dataService);
+  .service('marketsService', function (securityService) {
 
-function dataService($http, $log, $q, FirebaseService) {
+    this.save = function (market) {
+      return securityService.post('/markets', market).then(function successCallback(response) {
+        return response.data;
+      });
+    };
 
-  var data = {
-    'save': save,
-    'getMarkets': getMarkets
-  };
+    this.update = function (marketId, market) {
+      return securityService.put('/markets/'+marketId, market).then(function successCallback(response) {
+        return response.data;
+      });
+    };
 
-  function getMarkets() {
-    var deferred = $q.defer();
-    var markets_ref = FirebaseService.ref("markets");
+    this.delete = function (marketId) {
+      return securityService.delete('/markets/'+marketId).then(function successCallback(response) {
+        return response.data;
+      });
+    };
 
-    markets_ref.once('value',
-      function (dataSnapshot) {
-        deferred.resolve(dataSnapshot.val());
-      }
-    );
-    return deferred.promise;
-  }
+    this.list = function () {
+      return  securityService.get('/markets').then(function successCallback(response) {
+        return response.data;
+      });
+    };
 
-  // function makeRequest(url, params) {
-  //     var requestUrl = GH_BASE_URL+'/'+url;
-  //     angular.forEach(params, function (value, key) {
-  //         requestUrl = requestUrl + '&' + '=' + value;
-  //     });
-  //     return $http({
-  //         'url': requestUrl,
-  //         'method': 'GET',
-  //         'header':{
-  //             'User-Agent': 'enriquezrene',
-  //             'Accept': 'application/vnd.github.v3+json'
-  //         },
-  //         'cache': true
-  //     }).then(function (response) {
-  //         return response.data;
-  //     }).catch(dataServiceError);
-  // }
-
-  function save(market) {
-    console.log(JSON.stringify(market));
-  }
-
-  return data;
-
-}
+  });

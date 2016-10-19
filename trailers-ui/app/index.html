@@ -13,9 +13,10 @@
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="views/manage/theaters/list.css">
   <!-- endbuild -->
-  <script type="text/javascript"
-          src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=AIzaSyCMg61YckNGdx5JS0lx1eBTcynE2w82n9o&language=en"></script>
+  <!--<script type="text/javascript"-->
+          <!--src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=AIzaSyCMg61YckNGdx5JS0lx1eBTcynE2w82n9o&language=en"></script>-->
 </head>
 <body ng-app="app">
 <!--[if lte IE 8]>
@@ -51,7 +52,7 @@
       <li><a href="#/blank-survey">{{ 'Menu.download.form' | translate }}</a></li>
       <li><a href="#/fill-survey">{{ 'Menu.fill.form' | translate }}</a></li>
       <li><a href="#/manage/markets">{{ 'Menu.manage.markets' | translate }}</a></li>
-      <li><a href="#/manage/theaters">{{ 'Menu.manage.theaters' | translate }}</a></li>
+      <li><a href="#/manage-theaters/show-markets">{{ 'Menu.manage.theaters' | translate }}</a></li>
     </ul>
   </div>
 </nav>
@@ -71,14 +72,11 @@
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-translate/angular-translate.js"></script>
-<script src="bower_components/firebase/firebase.js"></script>
-<script src="bower_components/angularfire/dist/angularfire.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="app.js"></script>
-<script src="scripts/app.angular.default.js"></script>
 <script src="app.core.js"></script>
 <script src="app.routes.js"></script>
 <script src="app.services.js"></script>
@@ -87,9 +85,12 @@
 <script src="views/surveys/fill/fill-survey.ctrl.js"></script>
 <script src="i18n/i18n.ctrl.js"></script>
 <script src="views/manage/markets/manage-markets.ctrl.js"></script>
+<script src="views/manage/theaters/list-markets.ctrl.js"></script>
 <script src="views/manage/theaters/manage-theaters.ctrl.js"></script>
 <script src="components/bsActiveLink/bs-active-link.js"></script>
 <script src="components/ngAutocomplete/ng-autocomplete.js"></script>
+<script src="services/security.service.js"></script>
+<script src="services/theaters.service.js"></script>
 <script src="services/surveys.fct.js"></script>
 <script src="services/markets.fct.js"></script>
 <script src="services/firebase.fct.js"></script>

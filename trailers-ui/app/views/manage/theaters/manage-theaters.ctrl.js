@@ -1,39 +1,38 @@
-angular.module('app.core').controller('ManageTheatersController', function (FirebaseService, $firebaseArray, MarketsService) {
+angular.module('app.core').controller('ManageTheatersController', function (marketsService, $routeParams, theatersService) {
 
   var vm = this;
-  var theaters_ref = null;
+
+  var marketId = null;
+  vm.theater = {};
+
 
   (function initController() {
     _activate()
   })();
 
   function _activate() {
-    vm.theater = {};
-    theaters_ref = FirebaseService.ref("theaters");
-    MarketsService.getMarkets().then(function (data) {
-      vm.markets = data;
+    vm.theaters=[];
+    marketId = $routeParams.marketId;
+    _loadTheaters();
+  }
+
+  function _loadTheaters(){
+    theatersService.list(marketId).then(function (response) {
+      vm.theaters = response;
     });
-    vm.theaters = $firebaseArray(theaters_ref);
   }
 
   vm.save = function () {
-    var id = vm.theater['$id'];
-    if (id == undefined || id == null) {
-      vm.theaters.$add({
-        marketRowguid : vm.theater.marketRowguid,
-        name: vm.theater.name,
-        city: vm.theater.city,
-        address: vm.theater.address,
-        website: vm.theater.website
+    console.log(vm.theater.theaterId);
+    console.log(!vm.theater.theaterId);
+    if (!vm.theater.theaterId) {
+      theatersService.save(marketId, vm.theater).then(function (data) {
+        _loadTheaters();
       });
     } else {
-      var currentTheater = vm.theaters.$getRecord(id);
-      currentTheater.market_rowguid = vm.theater.market_rowguid;
-      currentTheater.name = vm.theater.name;
-      currentTheater.city = vm.theater.city;
-      currentTheater.address = vm.theater.address;
-      currentTheater.website = vm.theater.website;
-      vm.theaters.$save(currentTheater);
+      theatersService.update(marketId, vm.theater.theaterId, vm.theater).then(function (data) {
+        _loadTheaters();
+      });
     }
     vm.theater = {};
   };
@@ -42,9 +41,11 @@ angular.module('app.core').controller('ManageTheatersController', function (Fire
     vm.theater = angular.copy(theater)
   };
 
-  vm.remove = function (theater) {
-    vm.theaters.$remove(theater);
-    vm.theater = {};
+  vm.delete = function (theater) {
+    var theaterId = theater.theaterId;
+    theatersService.delete(marketId, theaterId).then(function (data) {
+      _loadTheaters();
+    })
   };
 
 });

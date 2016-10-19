@@ -1,7 +1,7 @@
-angular.module('app.core').controller('ManageMarketsController', function (MarketsService, FirebaseService, $firebaseArray, $http) {
+angular.module('app.core').controller('ManageMarketsController', function (marketsService, $http) {
 
   var vm = this;
-  var ref = null;
+  var marketId = null;
   vm.market = {};
 
   (function initController() {
@@ -9,39 +9,43 @@ angular.module('app.core').controller('ManageMarketsController', function (Marke
   })();
 
   function _activate() {
-
     $http.get('_iso_3166_alpha2.json').success(function (data) {
-      console.log(data);
       vm.country_codes = data;
     });
-
-    vm.market = {};
-    ref = FirebaseService.ref("markets");
-    vm.markets = $firebaseArray(ref);
+    vm.markets = [];
+    _findMarkets();
   }
 
-  vm.save_market = function () {
-    var id = vm.market['$id'];
-    if (id == undefined || id == null) {
-      vm.markets.$add({
-        name: vm.market.name,
-        country: vm.market.country
+  function _findMarkets () {
+    marketsService.list().then(function (response) {
+      vm.markets = response;
+    });
+  }
+
+  vm.saveMarket = function () {
+    if (!this.marketId) {
+      marketsService.save(vm.market).then(function (data) {
+        _findMarkets();
       });
     } else {
-      var currentMarket = vm.markets.$getRecord(id);
-      currentMarket.name = vm.market.name;
-      vm.markets.$save(currentMarket);
+      marketsService.update(this.marketId, vm.market).then(function (data) {
+        this.marketId = null;
+        _findMarkets();
+      });
     }
     vm.market = {};
   };
 
   vm.edit = function (market) {
     vm.market = angular.copy(market)
+    this.marketId = vm.market.marketId;
   };
 
-  vm.remove = function (market) {
-    vm.markets.$remove(market);
-    vm.market = {};
+  vm.delete = function (market) {
+    var marketId = market.marketId;
+    marketsService.delete(marketId).then(function (data) {
+      _findMarkets();
+    });
   };
 
 });

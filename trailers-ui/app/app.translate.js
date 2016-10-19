@@ -34,7 +34,14 @@ angular
       'Label.actions': 'Actions',
       'Label.duration.classification': 'Length Classification',
       'Menu.manage.nrg.projects' : 'Projects',
-      'Btn.ok' : 'OK'
+      'Btn.ok' : 'OK',
+      'Title.manage.theaters' : 'Theaters',
+      'Label.theater.name': 'Theater Name',
+      'Label.theater.city': 'Theater City',
+      'Label.theater.address': 'Theater Address',
+      'Label.theater.website': 'Theater Website',
+      'Menu.manage.theaters' : 'Manage Theaters',
+      'Label.manage.theaters.choose.market' : 'Choose a Market'
     });
 
     $translateProvider.translations('es', {

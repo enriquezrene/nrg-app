@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="page-header">
+    <h4>
+      {{ 'Label.manage.theaters.choose.market' | translate }}
+    </h4>
+  </div>
+
+  <div class="containers">
+    <div class="items" ng-repeat="market in vm.markets" ng-click="vm.chooseMarket(market)">
+      <strong>{{market.name}}</strong>
+      <p>
+        {{market.country}}
+      </p>
+    </div>
+  </div>
+
+</div>
+

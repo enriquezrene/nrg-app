@@ -1,0 +1,18 @@
+.containers {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.items {
+  cursor: pointer;
+  border: solid 1px;
+  width: 160px;
+  height: 55px;
+  margin: 10px 4px 0px 4px;
+  padding-top: 6px;
+  text-align: center;
+  border-radius: 3px;
+}

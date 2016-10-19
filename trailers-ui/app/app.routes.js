@@ -9,10 +9,15 @@ function routes($routeProvider) {
       controller: 'ManageMarketsController',
       controllerAs: 'manageMarkets'
     })
-    .when('/manage/theaters', {
+    .when('/manage-theaters/show-markets', {
+      templateUrl: 'views/manage/theaters/list-markets.tpl.html',
+      controller: 'ListMarketsController',
+      controllerAs: 'vm'
+    })
+    .when('/manage-theaters/theaters', {
       templateUrl: 'views/manage/theaters/manage-theaters.tpl.html',
       controller: 'ManageTheatersController',
-      controllerAs: 'manageTheaters'
+      controllerAs: 'vm'
     })
     .when('/nrg/projects/manage', {
       templateUrl: 'views/projects/nrg/nrg-projects.tpl.html',
