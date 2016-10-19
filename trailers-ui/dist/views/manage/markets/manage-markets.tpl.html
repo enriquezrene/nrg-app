@@ -8,17 +8,22 @@
 
   <form>
     <div class="form-group">
-      <input type="text" ng-autocomplete ng-model="manageMarkets.market.location" options="manageMarkets.options" details="details"
-             class="form-control" id="city" placeholder="{{ 'Label.market.city' | translate }}"/>
+      <label for="country_code">Country:</label>
+      <select id="country_code" class="form-control" data-ng-model="manageMarkets.market.country"
+              data-ng-options="country_code.Code as country_code.Name for country_code in manageMarkets.country_codes"></select>
     </div>
     <div class="form-group">
       <input type="text" class="form-control" id="last_name" ng-model="manageMarkets.market.name"
              placeholder="{{ 'Label.market.name' | translate }}">
     </div>
-
     <div class="form-group">
       <button class="btn btn-primary" ng-click="manageMarkets.save_market()">{{ 'Btn.add.market' | translate }}</button>
     </div>
+    <pre>
+      {{
+        manageMarkets.market | json
+      }}
+    </pre>
   </form>
 
 
@@ -30,7 +35,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-show="manage_markets.markets==0">
+    <tr ng-show="manageMarkets.markets==0">
       <td colspan="5">
         {{ 'Label.no.records' | translate }}
       </td>
