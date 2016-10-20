@@ -6,10 +6,6 @@ import com.nrg.trailers.firebase.domain.FirebaseCollection;
  * Created by rene on 19/10/16.
  */
 public class Market {
-
-    private String name;
-    private String country;
-
     public String getName() {
         return name;
     }
@@ -26,8 +22,9 @@ public class Market {
         this.country = country;
     }
 
+    private String name;
+    private String country;
+
     public static class Collection extends FirebaseCollection<Market> {
     }
-
-
 }

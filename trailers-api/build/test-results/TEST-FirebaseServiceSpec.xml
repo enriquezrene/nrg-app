@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="FirebaseServiceSpec" tests="1" skipped="0" failures="1" errors="0" timestamp="2016-10-20T04:57:59" hostname="MacBook-Pro-de-Rene.local" time="100.322">
+  <properties/>
+  <testcase name="should return a not null value" classname="FirebaseServiceSpec" time="100.322">
+    <failure message="java.io.IOException: Firebase Read Timeout: /trailers/v1/markets/abcd-1234" type="java.io.IOException">java.io.IOException: Firebase Read Timeout: /trailers/v1/markets/abcd-1234
+	at com.nrg.trailers.firebase.query.ValueListener.getValue(ValueListener.groovy:60)
+	at com.nrg.trailers.firebase.query.QueryResult.getValue(QueryResult.groovy:21)
+	at com.nrg.trailers.firebase.service.FirebaseService.getAs(FirebaseService.groovy:31)
+	at FirebaseServiceSpec.should return a not null value(FirebaseServiceSpec.groovy:20)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

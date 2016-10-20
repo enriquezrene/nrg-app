@@ -5,16 +5,7 @@ import com.nrg.trailers.firebase.domain.FirebaseCollection;
 /**
  * Created by rene on 19/10/16.
  */
-public class Theater {
-
-    public static class Collection extends FirebaseCollection<Theater> {
-    }
-
-    private String name;
-    private String address;
-    private String websiteUrl;
-    private String city;
-
+public class Theater{
     public String getName() {
         return name;
     }
@@ -45,5 +36,13 @@ public class Theater {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    private String name;
+    private String address;
+    private String websiteUrl;
+    private String city;
+
+    public static class Collection extends FirebaseCollection<Theater> {
     }
 }
