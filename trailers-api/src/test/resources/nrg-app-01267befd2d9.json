@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nrg-app-56be9",
+  "private_key_id": "01267befd2d95fc7fe49b26867343bd0203f2182",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDBADftaajw/Vns\n7Axjsn6jK83GgktRQre1S7h7Kh11xP/tWOjntHB7D9XFIO7XRo3ovZoWT0ZARhy7\nzuBxL48N1KS2X8ivqcOuaauFh02yNyOsA2t4v4g1H+bSVBhAEQPtuKeSbne0fkMA\nK76KUwzmDbakhx8CTFPk9mCaYRTuuSlNgyY3f7AkAdRM/louRAgYhdw9gLZy0eaM\nLH3Ebrf6FJFc/dnoEO53iZYV+NVEjCmllBuLgo0iJi8a9HmJ0wsEMabgj6Lo4Hs6\nI08EJc7Cep8dGHLqAlzQdmtH+8X+erj6O6YX2kkzQCpS6lsTb2rWm06G/L01NLWY\nvjLFXd2zAgMBAAECggEACiavyl3vU9WPgEWeFTRTMtPf+9voiDqhHPkBmADMEeCt\nsVcm0OENtXtMvBSSW2JLnn0yeI/s2v6VDk/AQFPHC2wuyaTaEls0fpzyN5C5RnFd\n//MiGPTB/kFSS6e+qsf6U+uNbMdApo6piX3DhNT/ba40+AxfViiblQRcamJGzpN5\nLLJwGy2tTJmN/XqXx6RJoJCu63QewlMs/BfbGNxi1ynzqYHvJuWwKGri9HmiT0Ue\nFir0+UpYdLCA8dPM2hpCHX8bvo3BDTFzJxZ7ew79DivwRCPggJ0d+bLXqcOCGWL6\n4zsaKW3JsNus2ASQw7yQ+QZTuoH4eDqBYsu+7+kwyQKBgQDq1vRMFlNRHXakPren\n9Wh3xVGq8lscuxK6wOcpI2dwWfmjbh+WDddvzLASJkPUPg8noLM6la1AhLS9NbZX\nWsYeuOhv+flLoaEt4xA4BayzCyNlM9j8H20+Z1caKsbxa5pNLJXh6SBr2T4ed9Bn\nJJcLHyr7ZuG3FJ9M38ifDgr55wKBgQDSZCsgHjf+5yOwdjUTWLaiAvjRG2PSIMQM\nuvGd87n9USyeNb/XNi36r6x7S2I2NT6+ySoFjkfWrPfSayp5+aTbrSdnpTHi57O6\nUypeGiPXOstsHC9M3jelhFFYpPRgWlpsFbAPc0dV1vkVA3j1BkoGVDH1Vn3gKWxe\nJ3WiTEt8VQKBgQDKQpqkEbJusX6mlXHekgoI5gShxBzfEOxftpchomGLraLJtKY1\nufQsUVHwP865tT2eNtVHBvTyFZoJQIKsl/z9Jurizpx9HFdSyzcD2TdV+ajhmBcx\nhuuzDJRDcEZqVe/OujDZIs2Otcu/uBfhTe1dYdnGL2UGJxfQwQjsnM6tTwKBgQCH\n/x3tTftONyTXvSFD1zV+9kLWEElvG6T+wZzLSC+yclVQE1hlie0gvYvVyv26IqLj\nem9CVh1TxE0RZBp57AhHw97T3XGoxbNkvruFRopiZuv1fyaIHqCDyks27LHW0rDe\nawp6gj7bWvF5RtxaLm2NN8FvYDBPxRb6qbEdbwngXQKBgH/if3IfvmBK+EBFeVSQ\n8YPOak2Eck5XOeJ77I2kCW1ASIergT4KTxIgNBvIh/4G51ggsAygwJJBXDLOrpH6\nhcxHqGqUn6Wow3gpSmeXNCUntHWgUtJWyxWmpR41nV6/DpKMHPEpzxm+BnnK6acp\nNPBJasqA0eHMzNDokREYiEUD\n-----END PRIVATE KEY-----\n",
+  "client_email": "nrg-app-api@nrg-app-56be9.iam.gserviceaccount.com",
+  "client_id": "109742764427051886268",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nrg-app-api%40nrg-app-56be9.iam.gserviceaccount.com"
+}
