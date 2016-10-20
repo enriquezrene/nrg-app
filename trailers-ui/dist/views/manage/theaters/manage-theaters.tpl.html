@@ -8,33 +8,28 @@
 
   <form>
     <div class="form-group">
-      <label for="market">Market:</label>
-      <select id="market" class="form-control" ng-model="manageTheaters.theater.marketRowguid"
-              ng-options="market.id as market.name for market in manageTheaters.markets"></select>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" id="name" ng-model="manageTheaters.theater.name"
+      <input type="text" class="form-control" id="name" ng-model="vm.theater.name"
              placeholder="{{ 'Label.theater.name' | translate }}">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" id="city" ng-model="manageTheaters.theater.city"
+      <input type="text" class="form-control" id="city" ng-model="vm.theater.city"
              placeholder="{{ 'Label.theater.city' | translate }}">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" id="address" ng-model="manageTheaters.theater.address"
+      <input type="text" class="form-control" id="address" ng-model="vm.theater.address"
              placeholder="{{ 'Label.theater.address' | translate }}">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" id="website" ng-model="manageTheaters.theater.website"
+      <input type="text" class="form-control" id="website" ng-model="vm.theater.websiteUrl"
              placeholder="{{ 'Label.theater.website' | translate }}">
     </div>
 
     <div class="form-group">
-      <button class="btn btn-primary" ng-click="manageTheaters.save()">{{ 'Btn.add.market' | translate }}</button>
+      <button class="btn btn-primary" ng-click="vm.save()">{{ 'Btn.add.market' | translate }}</button>
     </div>
     <pre>
       {{
-        manageTheaters.theater | json
+        vm.theater | json
       }}
     </pre>
   </form>
@@ -44,22 +39,22 @@
     <thead>
     <tr>
       <th>{{ 'Label.theater.name' | translate }}</th>
-      <th>{{ 'Label.theater.city' | translate }}</th>
+      <th>{{ 'Label.theater.website' | translate }}</th>
       <th style="text-align: center">{{ 'Label.actions' | translate }}</th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-show="manageTheaters.theaters==0">
+    <tr ng-show="vm.theaters==0">
       <td colspan="5">
         {{ 'Label.no.records' | translate }}
       </td>
     </tr>
-    <tr ng-repeat="theater in manageTheaters.theaters">
+    <tr ng-repeat="theater in vm.theaters">
       <td>{{ theater.name }}</td>
-      <td>{{ theater.city }}</td>
+      <td>{{ theater.websiteUrl }}</td>
       <td style="text-align: center">
-        <a ng-click="manageTheaters.edit(theater)"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a ng-click="manageTheaters.remove(theater)"><span class="glyphicon glyphicon-remove"></span></a>
+        <a ng-click="vm.edit(theater)"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a ng-click="vm.delete(theater)"><span class="glyphicon glyphicon-remove"></span></a>
       </td>
     </tr>
     </tbody>

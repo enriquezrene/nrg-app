@@ -17,7 +17,7 @@
              placeholder="{{ 'Label.market.name' | translate }}">
     </div>
     <div class="form-group">
-      <button class="btn btn-primary" ng-click="manageMarkets.save_market()">{{ 'Btn.add.market' | translate }}</button>
+      <button class="btn btn-primary" ng-click="manageMarkets.saveMarket()">{{ 'Btn.add.market' | translate }}</button>
     </div>
     <pre>
       {{
@@ -44,7 +44,7 @@
       <td>{{ market.name }}</td>
       <td style="text-align: center">
         <a ng-click="manageMarkets.edit(market)"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a ng-click="manageMarkets.remove(market)"><span class="glyphicon glyphicon-remove"></span></a>
+        <a ng-click="manageMarkets.delete(market)"><span class="glyphicon glyphicon-remove"></span></a>
       </td>
     </tr>
     </tbody>
