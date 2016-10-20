@@ -1,6 +1,27 @@
 angular.module('app', ['app.routes', 'app.core', 'app.translate']);
 
 angular.module('app.core', ['app.services', 'ngAutocomplete', 'ui.bootstrap', 'ngResource']);
+'use strict';
+
+/**
+ * @ngdoc overview
+ * @name angularDemoApp
+ * @description
+ * # angularDemoApp
+ *
+ * Main module of the application.
+ */
+angular
+  .module('app.angular.default', [
+    'ui.bootstrap',
+    'ngAnimate',
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngTouch'
+  ]);
+
+angular.module('app.core', ['app.services', 'ngAutocomplete', 'ui.bootstrap', 'ngResource', 'firebase']);
 
 angular
   .module('app.routes', ['ngRoute'])
@@ -301,10 +322,19 @@ angular.module('app.core').controller('i18nCtrl', ['$translate', '$scope', funct
     };
 
 }]);
+<<<<<<< HEAD
 angular.module('app.core').controller('ManageMarketsController', ["marketsService", "$http", function (marketsService, $http) {
 
   var vm = this;
   var marketId = null;
+=======
+angular.module('app.core').controller('ManageMarketsController', ["MarketsService", "$firebaseArray", function (MarketsService, $firebaseArray) {
+
+  var vm = this;
+
+
+
+>>>>>>> feature/manage_markets
   vm.market = {};
 
   (function initController() {
@@ -319,6 +349,7 @@ angular.module('app.core').controller('ManageMarketsController', ["marketsServic
     _findMarkets();
   }
 
+<<<<<<< HEAD
   function _findMarkets () {
     marketsService.list().then(function (response) {
       vm.markets = response;
@@ -337,10 +368,41 @@ angular.module('app.core').controller('ManageMarketsController', ["marketsServic
       });
     }
     vm.market = {};
+=======
+  var config = {
+    apiKey: "AIzaSyB_z39DJzoGohAxnNjfzo-JS483sDIyd5Y",
+    authDomain: "fir-9c801.firebaseapp.com",
+    databaseURL: "https://fir-9c801.firebaseio.com",
+    storageBucket: "fir-9c801.appspot.com",
+    messagingSenderId: "545225286496"
+  };
+  firebase.initializeApp(config);
+
+
+  var ref = firebase.database().ref().child("markets");
+  // create a synchronized array
+  vm.markets = $firebaseArray(ref);
+
+  vm.save_market = function () {
+    var id = vm.market['$id'];
+    if(id == undefined || id == null){
+      vm.markets.$add({
+        name: vm.market.name,
+        location: vm.market.location
+      });
+    } else {
+      console.log(id);
+      var currentMarket = vm.markets.$getRecord(id);
+      currentMarket.name = vm.market.name;
+      vm.markets.$save(currentMarket);
+      vm.market = {};
+    }
+>>>>>>> feature/manage_markets
   };
 
   vm.edit = function (market) {
     vm.market = angular.copy(market)
+<<<<<<< HEAD
     this.marketId = vm.market.marketId;
   };
 
@@ -425,6 +487,12 @@ angular.module('app.core').controller('ManageTheatersController', ["marketsServi
     theatersService.delete(marketId, theaterId).then(function (data) {
       _loadTheaters();
     })
+=======
+  };
+
+  vm.remove = function (market) {
+    vm.markets.$remove(market);
+>>>>>>> feature/manage_markets
   };
 
 }]);
